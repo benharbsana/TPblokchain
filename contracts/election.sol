@@ -8,8 +8,10 @@ contract Election {
  // Constructor
 
 constructor() public {
- addCandidate("Candidate 1");
- addCandidate("Candidate 2");
+ addCandidate("sana");
+ addCandidate("ahmed");
+ 
+
  }
 
 // Store accounts that have voted
@@ -39,6 +41,8 @@ function vote (uint _candidateId) public {
  // trigger voted event
  emit votedEvent(_candidateId);
 }
+
+
 
 }
 

@@ -100,8 +100,21 @@ App = {
   }).catch(function(err) {
   console.error(err);
   });
+  }, addCandidate: function(){
+    account1 = web3.eth.accounts[0];
+    account2 = web3.eth.accounts[1];
+    var candidateName = $("#candidateName").val();
+    App.contracts.Election.deployed()
+    .then(function (instance) {
+      if(App.account==account1 || App.account==account2){
+      return instance.addCandidate(candidateName, { from: App.account})
+    }
   }
-  };
+    )
+    }
+    };
+
+  
   $(function() {
   $(window).load(function() {
   App.init();
